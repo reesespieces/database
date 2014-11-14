@@ -2,13 +2,10 @@ require 'sinatra'
 require 'sequel'
 DB = Sequel.connect('sqlite://test.db') #url
 
-get '/discussion' do
-  #erb :jeremyevans
-  redirect 'discussion.html'
-end
-
-get '/erb' do
+get '/evans' do
+  @items = DB[:discussion2]
   erb :jeremyevans
+  #redirect 'discussion.html'
 end
 
 get '/create_table' do
