@@ -1,0 +1,32 @@
+<h1 style>Jeremy Evans Discussion</h1>
+
+<div style="background-color:lightgrey; width:400px; height:175px; padding-left:10px; padding-top:10px;">
+  <form action = "/form" method="post">
+    Topic: <input type="text" name ="topic" placeholder="Your topic"></br>
+    Username: <input type="text" name ="user" placeholder="Your username"></br>
+    Comment:
+    </br><textarea name="comment" rows="5" cols="52" placeholder="Your comment"></textarea></br> <!-- <input type="text" name="comment" placeholder="Your comment"> -->
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<!-- <hr> -->
+
+<% @items.all.reverse.each do |x| %>
+    <h3> <%= x[:topic] %> by: <%= x[:user] %> </h3>
+    <p> <%= x[:comment] %> <p>
+    <hr>
+<% end %>
+
+
+<!--
+
+<h3>Previous Discussions</h3>
+<p>
+<ul>
+< % @items.all.each do |x| %>
+  <li> < %= x[:user] %> : < %= x[:comment] %> </li>
+< % end %>
+</ul>
+</p>
+-->
